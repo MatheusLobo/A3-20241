@@ -1,0 +1,22 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    extends:
+      - build.yml
+
+  test:
+    extends:
+      - test.yml
+
+  deploy-release:
+    extends:
+      - deploy-release.yml
